@@ -24,14 +24,34 @@
     <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
     <!--Responsive Extension Datatables CSS-->
     <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
+    <script>
+        // darkmode
+        $(".terang").show();
+        $(".gelap").hide();
+        $(".namedark").hide();
+        $(".namelight").show();
+        $(".terang").click(function() {
+            $(".gelap").show("slow");
+            $(".terang").hide("slow");
+            $(".namedark").show("slow");
+            $(".namelight").hide("slow");
+        });
+        $(".gelap").click(function() {
+            $(".gelap").hide("slow");
+            $(".terang").show("slow");
+            $(".namedark").hide("slow");
+            $(".namelight").show("slow");
+        });
+    </script>
+
 
 </head>
 
-<body onload="startTime()">
+<body onload="startTime()" class=" dark:bg-dark">
     <!-- Navbar -->
     <header class="flex">
         <div class="w-32 lg:w-36 overflow-hidden bg-transparent">
-            <div class="nav fixed m-4 rounded-lg bg-white" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+            <div class="nav fixed m-4 rounded-lg bg-white dark:bg-dark" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
                 <ul class="content-center mt-5 border rounded-xl hover:bg-gray-300">
                     <li class="content-center m-2 hover:text-white">
                         <a href="landing-page.php" style="text-decoration: none;">
@@ -83,8 +103,9 @@
             </div>
         </div>
         <div class="w-full mr-5 self-start">
-            <div class="w-full mb-10 h-24 mt-5 mr-5 rounded-lg shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]">
+            <div class="w-full mb-10 h-24 mt-5 mr-5 bg-white dark:bg-dark rounded-lg shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] dark:border-2 dark:border-gray-500/50 dark:rounded-b-2xl dark:shadow-[inset_-12px_-8px_40px_#46464620]">
                 <div class="mt-4 font-semibold text-sm text-gray-500 m-2 flex float-right">
+                    <div id="tanggalBulanTahun" class="text-2xl mr-10 mt-4 font-semibold" style="color: #f97316;"></div>
                     <div class="w-64 mr-10 flex border-solid border-2 border-primary rounded-lg hover:bg-gray-200">
                         <a href="landing-page.php">
                             <img src="dist/asset/navbar/staff.png" class="mt-2 ms-2" style="width: 3.6vh;" alt="" srcset="">
@@ -520,13 +541,13 @@
         </div>
 
     </header>
-    <div class=" footer mt-24 absolute w-full">
+    <div class="footer mt-24 absolute w-full">
         <div class="coverfooter h-24 w-full">
             <p class="font-semibold text-3xl text-white float-left mt-8 ms-10">PT. Sagon Nutrition (Sulawesi Selatan)</p>
-            <div class=" footerleft float-right mt-8">
+            <div class="footerleft float-right mt-8">
                 <div class="watch flex">
                     <div id="txt" class="text-2xl mr-7 text-white font-semibold"></div>
-                    <div id="tanggalBulanTahun" class="text-2xl mr-10 text-white font-semibold"></div>
+                    <div class="font-semibold text-2xl mr-10 text-gray">V.01.25</div>
                 </div>
             </div>
         </div>
@@ -536,6 +557,7 @@
 
     </script>
     <!-- js link -->
+    <script src="dist/asset/js/dark_mode.js"></script>
     <script src=" controller/time-date.js"></script>
     <!-- jQuery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
