@@ -143,7 +143,7 @@
             <div class="w-full dark:border-2 dark:border-solid dark:border-gray-500/50 dark:rounded-2xl dark:shadow-[inset_-12px_-8px_40px_#46464620]" style="height: 71vh;">
                 <div class="header w-42 text-4xl font-semibold ps-3 pt-2">Walcome to Admin
                 </div>
-                <div class="header w-42 mt-5 text-4xl font-semibold ps-3 pt-2" style="color: grey;">Notes :
+                <div class="header w-42 mt-5 text-4xl font-semibold ps-3 pt-2" style="color: grey;">News : Belum ada berita!!!
                 </div>
             </div>
         </div>
