@@ -1,6 +1,7 @@
 <?php
 // require_once("config/connector.php");
 
+
 ?>
 
 <!DOCTYPE html>
@@ -9,68 +10,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sagon Nutrition | Iventory</title>
+    <title>Sagon Nutrition | Landing Page</title>
     <link rel="stylesheet" href="dist/output.css" />
     <link rel="stylesheet" href="style/styles.css" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.8/dist/sweetalert2.all.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <script src="dist/asset/js/script.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <script>
+        // $(document).ready(function() {     $('#tabel-data').DataTable(); });
         $(document).ready(function() {
-            $(".addcol").hide();
-            $("#ingridents").hide();
-            $("#menu").hide();
-            $("#team").hide();
-            $(".slidecol").hide();
-            $(".bar2").hide();
-
-            $("#btnind").dblclick(function() {
-                $("#ingridents").show("slow");
-                $(".addcol").show("slow");
-                $("#team").show("slow");
-                $("#btnmn").hide("slow");
-                $("#btnotr").hide("slow");
-                $("#btnsmn").hide("slow");
-                $("#btnind").click(function() {
-                    $("#ingridents").hide("slow");
-                    $(".addcol").hide("slow");
-                    $("#team").hide("slow");
-                    $("#btnmn").show("slow");
-                    $("#btnotr").show("slow");
-                    $("#btnsmn").show("slow");
-                })
+            $('#tabel-data').dataTable({
+                "aLengthMenu": [
+                    [
+                        10, 30, 50, -1
+                    ],
+                    [
+                        10, 30, 50, "All"
+                    ]
+                ],
+                "pageLength": 10
             });
-
-            $("#btnmn").dblclick(function() {
-                $("#menu").show("slow");
-                $(".addcol").show("slow");
-                $("#team").show("slow");
-                $("#btnind").hide("slow");
-                $("#btnotr").hide("slow");
-                $("#btnsmn").hide("slow");
-                $("#btnmn").click(function() {
-                    $("#menu").hide("slow");
-                    $(".addcol").hide("slow");
-                    $("#team").hide("slow");
-                    $("#btnind").show("slow");
-                    $("#btnotr").show("slow");
-                    $("#btnsmn").show("slow");
-                })
-            });
-
-            $(".addcol").click(function() {
-                $(".slidecol").show();
-            })
-            $(".addcol").click(function() {
-                $(".bar2").show();
-            })
-
-
-            // darkmode
+        });
+        $(document).ready(function() {
             $(".terang").show();
             $(".gelap").hide();
             $(".namedark").hide();
@@ -89,7 +53,6 @@
             });
         });
     </script>
-
 </head>
 
 <body onload="startTime()" class="w-full dark:bg-dark">
@@ -207,21 +170,15 @@
                     </div>
                 </div>
             </div>
-            <div class="mb-44">
-                <div class="w-2/3 flex">
-                    <div class="header w-40 text-4xl font-semibold ps-3 pt-2">Wallet</div>
-                    <div class="chose w-full flex ms-5">
-                        <button type="submit" value="Login" id="btnind" name="login" class="w-60 h-14 mb-5 ms-3 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] text-white border-2 hover:bg-slate-100 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-2xl dark:text-white text-center hover:text-black">Income</button>
-                        <button type="submit" value="Login" id="btnmn" name="login" class="w-60 h-14 mb-5 ms-3 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] text-white border-2 hover:bg-slate-100 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-2xl dark:text-white text-center hover:text-black">Expense</button>
-                        <button type="submit" value="Login" id="btnotr" name="login" class="w-60 h-14 mb-5 ms-3 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] text-white border-2 hover:bg-slate-100 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-2xl dark:text-white text-center hover:text-black">Bonus</button>
-                    </div>
+            <div class="w-full dark:border-2 dark:border-solid dark:border-gray-500/50 dark:rounded-2xl dark:shadow-[inset_-12px_-8px_40px_#46464620]" style="height: 71vh;">
+                <div class="header w-42 text-4xl font-semibold ps-3 pt-2">Packet
                 </div>
-                <!-- Content -->
-
-                <!-- END Content -->
+                <div class="header w-42 mt-5 text-4xl font-semibold ps-3 pt-2" style="color: grey;">News : Belum ada berita!!!
+                </div>
             </div>
         </div>
     </header>
+
     <div class="footer mt-24 absolute w-full">
         <div class="coverfooter h-24 w-full">
             <p class="font-semibold text-3xl text-white float-left mt-8 ms-10">PT. Sagon Nutrition (Sulawesi Selatan)</p>
@@ -236,18 +193,9 @@
     <!-- End Navbar -->
 
     <!-- js link -->
-    <script src="dist/asset/js/dark_mode.js"></script>
-    <script src=" https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js">
-    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.6.5/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.flash.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.print.min.js"></script>
+    <script src="dist/asset/js/dark_mode.js"></script>
     <script src=" controller/time-date.js"></script>
-
     <script>
         $(document).ready(function() {
             $('#export_data').DataTable({

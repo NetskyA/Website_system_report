@@ -9,11 +9,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add item</title>
+    <title>Sagon Nutrition | Add item</title>
     <link rel="stylesheet" href="dist/output.css" />
     <link rel="stylesheet" href="style/styles.css" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.8/dist/sweetalert2.all.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="dist/asset/js/script.js"></script>
@@ -122,7 +123,7 @@
                 </ul>
                 <ul class="content-center mt-5 border rounded-xl hover:bg-gray-300">
                     <li class="content-center m-2 hover:text-white">
-                        <a href="landing-page.php" style="text-decoration: none;">
+                        <a href="packet.php" style="text-decoration: none;">
                             <img src="dist/asset/navbar/package.png" class="mx-auto" alt="add item" />
                             <p class="namenav text-lg pt-1 ps-1 text-center font-semibold">Packet</p>
                         </a>
@@ -138,7 +139,7 @@
                 </ul>
                 <ul class="content-center mt-5 border rounded-xl hover:bg-gray-300">
                     <li class="content-center m-2 hover:text-white">
-                        <a href="landing-page.php" style="text-decoration: none;">
+                        <a href="export.php" style="text-decoration: none;">
                             <img src="dist/asset/navbar/printer.png" class="mx-auto" alt="add item" />
                             <p class="namenav text-lg pt-1 ps-1 text-center font-semibold">Export</p>
                         </a>
@@ -165,16 +166,44 @@
             <div class="w-full mb-10 h-24 mt-5 mr-5 bg-white dark:bg-dark rounded-lg shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] dark:border-2 dark:border-gray-500/50 dark:rounded-b-2xl dark:shadow-[inset_-12px_-8px_40px_#46464620]">
                 <div class="mt-4 font-semibold text-sm text-gray-500 m-2 flex float-right">
                     <div id="tanggalBulanTahun" class="text-2xl mr-10 mt-4 font-semibold" style="color: #f97316;"></div>
-                    <div class="w-64 mr-10 flex border-solid border-2 border-primary rounded-lg hover:bg-gray-200">
+                    <div class="w-64 mr-10 flex border-solid border-2 mt-1 border-primary rounded-lg hover:bg-gray-200">
                         <a href="landing-page.php">
-                            <img src="dist/asset/navbar/staff.png" class="mt-2 ms-2" style="width: 3.6vh;" alt="" srcset="">
+                            <img src="dist/asset/navbar/staff.png" class="mt-2 mb-1 ms-2" style="width: 3.6vh;" alt="" srcset="">
                         </a>
                         <p class="text-2xl pt-3 ps-3 font-semibold text-slate-500">Admin</p>
                     </div>
                     <div class="mr-10 mt-2">
-                        <a href="loginadmin.php" class="no-underline">
+                        <a href="#" class="no-underline" data-modal-target="popup-modal" data-modal-toggle="popup-modal">
                             <img src="dist/asset/navbar/logout.png" alt="exit" />
                         </a>
+                    </div>
+                    <div id="popup-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                        <div class="relative w-full max-w-md max-h-full">
+                            <div class="relative rounded-lg shadow w-full dark:bg-gray-700" style="background-color: #f97316;">
+                                <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-600 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="popup-modal">
+                                    <img src="dist/asset/login/close.png" class="w-3 h-3" alt="" srcset="">
+                                    <span class="sr-only">Close modal</span>
+                                </button>
+                                <div class="p-6 text-center">
+                                    <img src="dist/asset/login/warning.png" class="mx-auto mb-4 text-gray-400 w-16 h-16 dark:text-gray-200" alt="" srcset="">
+                                    <h3 class="mb-5 text-2xl font-normal text-white dark:text-white">Are you sure you want to logout</h3>
+                                    <div class="mt-6 flex justify-center gap-x-4">
+                                        <a class="px-4 inline-flex justify-center " href="loginadmin.php" style="text-decoration: none;" />
+                                        <button data-modal-hide="popup-modal" type="button" class="text-gray-500 bg-white hover:bg-yellow-300 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg text-sm font-medium px-5 py-2.5 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">
+                                            <p class="text-gray-800 dark:text-white text-xl">
+                                                Logout
+                                            </p>
+                                        </button>
+                                        </a>
+                                        <button data-modal-hide="popup-modal" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">
+                                            <p class="text-gray-800 dark:text-white text-xl">
+                                                Cancel
+                                            </p>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -189,9 +218,9 @@
                     </div>
                 </div>
                 <div id="ingridents" class="w-11/12">
-                    <div class="flex-row border-2 rounded-2xl dark:text-primary w-1/1" id="team">
+                    <div class="flex-row border-2 rounded-2xl dark:text-white w-1/1" id="team">
                         <div class="flex mb-2">
-                            <div class="text-2xl font-semibold pt-2 ps-3 dark:text-primary">
+                            <div class="text-2xl font-semibold pt-2 ps-3 dark:text-white">
                                 Type :
                             </div>
                             <select style="height: 4vh; width:10vw; border:none; background: transparent;">
@@ -199,13 +228,13 @@
                                 <option value="Vineet">Food</option>
                                 <option value="Sumit">Non Food</option>
                             </select>
-                            <button type="submit" value="Login" name="login" class="addcol w-40 h-10 mb-5 ms-32 mt-2 mr-1 dark:text-primary text-black border-2 bg-slate-100 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-2xl text-center hover:bg-primary hover:text-white" style="background: transparent;">Add column</button>
+                            <button type="submit" value="Login" name="login" class="addcol w-40 h-10 mb-5 ms-32 mt-2 mr-1 dark:text-white text-black border-2 bg-slate-100 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-2xl text-center hover:bg-primary hover:text-white" style="background: transparent;">Add column</button>
                         </div>
                         <div class="flex">
-                            <div class="text-2xl dark:text-primary font-semibold pt-2 ps-3">
-                                <label for="Date of Birth" class="dark:text-primary">
+                            <div class="text-2xl dark:text-white font-semibold pt-2 ps-3">
+                                <label for="Date of Birth" class="dark:text-white">
                                     Enter Date:
-                                    <input type="date" class="text-2xl  ms-8 font-semibold dark:text-primary" style="border: none; color:#f97316; background: transparent;" name="date">
+                                    <input type="date" class="text-2xl  ms-8 font-semibold dark:text-white" style="border: none; background: transparent;" name="date">
                                 </label>
                             </div>
                         </div>
@@ -214,57 +243,57 @@
                         <thead>
                             <form action="">
                                 <tr>
-                                    <th class="w-1/1 font-semibold dark:text-primary">No</th>
-                                    <th class="w-1/1 font-semibold dark:text-primary">Ingredients</th>
-                                    <th class="w-1/1 font-semibold dark:text-primary">Weight</th>
-                                    <th class="w-1/1 font-semibold dark:text-primary">Prize</th>
-                                    <th class="w-1/1 font-semibold dark:text-primary">Suppliers</th>
-                                    <th class="w-1/1 font-semibold dark:text-primary">Notes</th>
+                                    <th class="w-1/1 font-semibold dark:text-white">No</th>
+                                    <th class="w-1/1 font-semibold dark:text-white">Ingredients</th>
+                                    <th class="w-1/1 font-semibold dark:text-white">Weight</th>
+                                    <th class="w-1/1 font-semibold dark:text-white">Prize</th>
+                                    <th class="w-1/1 font-semibold dark:text-white">Suppliers</th>
+                                    <th class="w-1/1 font-semibold dark:text-white">Notes</th>
                                 </tr>
                                 <tr>
-                                    <th class="font-semibold pb-2 dark:text-primary">1</th>
-                                    <td><input type="text" class="text-2xl dark:text-primary " style="border: none; background: transparent;" name="Name Food"></td>
-                                    <td class="flex"><input type="text" class="text-2xl" style="border: none; width:10vw; background: transparent;" name="Weight">
+                                    <th class="font-semibold pb-2 dark:text-white">1</th>
+                                    <td><input type="text" class="text-2xl dark:text-white " style="border: none; background: transparent;" name="Name Food"></td>
+                                    <td class="flex"><input type="text" class="text-2xl dark:text-white" style="border: none; width:10vw; background: transparent;" name="Weight">
                                         <select style=" border:none; background: transparent;">
-                                            <option value="Vineet" class="text-2xl">Gr</option>
-                                            <option value="Select" class="text-2xl">Kg</option>
-                                            <option value="Vineet" class="text-2xl">Ons</option>
-                                            <option value="Vineet" class="text-2xl">Krat</option>
+                                            <option value="Vineet" class="text-2xl dark:text-white">Gr</option>
+                                            <option value="Select" class="text-2xl dark:text-white">Kg</option>
+                                            <option value="Vineet" class="text-2xl dark:text-white">Ons</option>
+                                            <option value="Vineet" class="text-2xl dark:text-white">Krat</option>
                                         </select>
                                     </td>
-                                    <td><input type="text" class="text-2xl" style="border: none; background: transparent;" name="Prize" placeholder="Rp. "></td>
-                                    <td><input type="text" class="text-2xl" style="border: none; background: transparent;" name="Suppliers"></td>
-                                    <td><input type="text" class="text-2xl" style="border: none; background: transparent;" name="Note"></td>
+                                    <td><input type="text" class="text-2xl dark:text-white" style="border: none; background: transparent;" name="Prize" placeholder="Rp. "></td>
+                                    <td><input type="text" class="text-2xl dark:text-white" style="border: none; background: transparent;" name="Suppliers"></td>
+                                    <td><input type="text" class="text-2xl dark:text-white" style="border: none; background: transparent;" name="Note"></td>
                                 </tr>
                                 <tr>
-                                    <th class="font-semibold pb-2 dark:text-primary">2</th>
-                                    <td><input type="text" class="text-2xl dark:text-primary" style="border: none; background: transparent;" name="Name Food"></td>
-                                    <td class="flex"><input type="text" class="text-2xl" style="border: none; width:10vw; background: transparent;" name="Weight">
+                                    <th class="font-semibold pb-2 dark:text-white">2</th>
+                                    <td><input type="text" class="text-2xl dark:text-white" style="border: none; background: transparent;" name="Name Food"></td>
+                                    <td class="flex"><input type="text" class="text-2xl dark:text-white" style="border: none; width:10vw; background: transparent;" name="Weight">
                                         <select style=" border:none; background: transparent;">
-                                            <option value="Vineet" class="text-2xl">Gr</option>
-                                            <option value="Select" class="text-2xl">Kg</option>
-                                            <option value="Vineet" class="text-2xl">Ons</option>
-                                            <option value="Vineet" class="text-2xl">Krat</option>
+                                            <option value="Vineet" class="text-2xl dark:text-white">Gr</option>
+                                            <option value="Select" class="text-2xl dark:text-white">Kg</option>
+                                            <option value="Vineet" class="text-2xl dark:text-white">Ons</option>
+                                            <option value="Vineet" class="text-2xl dark:text-white">Krat</option>
                                         </select>
                                     </td>
-                                    <td><input type="text" class="text-2xl" style="border: none; background: transparent;" name="Prize" placeholder="Rp. "></td>
-                                    <td><input type="text" class="text-2xl" style="border: none; background: transparent;" name="Suppliers"></td>
-                                    <td><input type="text" class="text-2xl" style="border: none; background: transparent;" name="Note"></td>
+                                    <td><input type="text" class="text-2xl dark:text-white" style="border: none; background: transparent;" name="Prize" placeholder="Rp. "></td>
+                                    <td><input type="text" class="text-2xl dark:text-white" style="border: none; background: transparent;" name="Suppliers"></td>
+                                    <td><input type="text" class="text-2xl dark:text-white" style="border: none; background: transparent;" name="Note"></td>
                                 </tr>
                                 <tr class="slidecol">
-                                    <th class="font-semibold pb-2 dark:text-primary">3</th>
-                                    <td><input type="text" class="text-2xl dark:text-primary" style="border: none; background: transparent;" name="Name Food"></td>
-                                    <td class="flex"><input type="text" class="text-2xl" style="border: none; width:10vw;background: transparent;" name="Weight">
+                                    <th class="font-semibold pb-2 dark:text-white">3</th>
+                                    <td><input type="text" class="text-2xl dark:text-white" style="border: none; background: transparent;" name="Name Food"></td>
+                                    <td class="flex"><input type="text" class="text-2xl dark:text-white" style="border: none; width:10vw;background: transparent;" name="Weight">
                                         <select style=" border:none; background: transparent;">
-                                            <option value="Vineet" class="text-2xl">Gr</option>
-                                            <option value="Select" class="text-2xl">Kg</option>
-                                            <option value="Vineet" class="text-2xl">Ons</option>
-                                            <option value="Vineet" class="text-2xl">Krat</option>
+                                            <option value="Vineet" class="text-2xl dark:text-white">Gr</option>
+                                            <option value="Select" class="text-2xl dark:text-white">Kg</option>
+                                            <option value="Vineet" class="text-2xl dark:text-white">Ons</option>
+                                            <option value="Vineet" class="text-2xl dark:text-white">Krat</option>
                                         </select>
                                     </td>
-                                    <td><input type="text" class="text-2xl" style="border: none; background: transparent;" name="Prize" placeholder="Rp. "></td>
-                                    <td><input type="text" class="text-2xl" style="border: none; background: transparent;" name="Suppliers"></td>
-                                    <td><input type="text" class="text-2xl" style="border: none; background: transparent;" name="Note"></td>
+                                    <td><input type="text" class="text-2xl dark:text-white" style="border: none; background: transparent;" name="Prize" placeholder="Rp. "></td>
+                                    <td><input type="text" class="text-2xl dark:text-white" style="border: none; background: transparent;" name="Suppliers"></td>
+                                    <td><input type="text" class="text-2xl dark:text-white" style="border: none; background: transparent;" name="Note"></td>
                                 </tr>
                             </form>
                         </thead>
@@ -279,20 +308,20 @@
                 <div id="menu" class="w-11/12">
                     <div class="flex-row border-2 rounded-2xl w-1/1 mb-3" id="team">
                         <div class="flex mb-2">
-                            <div class="text-2xl font-semibold pt-2 ps-3 dark:text-primary">
+                            <div class="text-2xl font-semibold pt-2 ps-3 dark:text-white">
                                 Food types :
                             </div>
-                            <select style="height: 4vh; width:10vw; border:none; background: transparent;" class="dark:text-primary">
+                            <select style="height: 4vh; width:10vw; border:none; background: transparent;" class="dark:text-white">
                                 <option value="Vineet">Food</option>
                                 <option value="Sumit">Drink</option>
                             </select>
-                            <button type="submit" value="Login" name="login" class="addcol w-40 h-10 mb-3 mt-2 ms-30 text-black border-2 dark:text-primary dark:bg-dark bg-slate-100 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-2xl text-center hover:bg-primary hover:text-white">Add column</button>
+                            <button type="submit" value="Login" name="login" class="addcol w-40 h-10 mb-3 mt-2 ms-30 text-black border-2 dark:text-white dark:bg-dark bg-slate-100 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-2xl text-center hover:bg-primary hover:text-white">Add column</button>
                         </div>
                         <div class="flex mb-2">
-                            <div class="text-2xl font-semibold pt-2 ps-3 dark:text-primary">
+                            <div class="text-2xl font-semibold pt-2 ps-3 dark:text-white">
                                 Dish type :
                             </div>
-                            <select style="height: 4vh; width:10.8vw; border:none; background: transparent;" class="dark:text-primary">
+                            <select style="height: 4vh; width:10.8vw; border:none; background: transparent;" class="dark:text-white">
                                 <option value="Vineet">Dessert</option>
                                 <option value="Sumit">Jus</option>
                                 <option value="Sumit">Salad</option>
@@ -306,7 +335,7 @@
                             </select>
                         </div>
                         <div class="flex mb-8">
-                            <div class="text-2xl font-semibold pt-2 ps-3 dark:text-primary">
+                            <div class="text-2xl font-semibold pt-2 ps-3 dark:text-white">
                                 <label for="Date of Birth" style="background: transparent;">
                                     Enter Date:
                                     <input type="date" class="text-2xl ms-8 font-semibold" style="border: none; background: transparent;" name="date">
@@ -318,129 +347,137 @@
                         <thead>
                             <form action="">
                                 <tr>
-                                    <th class="w-1/1 font-semibold dark:text-primary">No</th>
-                                    <th class="w-48 font-semibold dark:text-primary">Conditions</th>
-                                    <th class="w-1/1 font-semibold dark:text-primary">Name Food</th>
-                                    <th class="w-1/1 font-semibold dark:text-primary">Ingredients</th>
-                                    <th class="w-1/1 font-semibold dark:text-primary">Qty</th>
-                                    <th class="w-38 font-semibold dark:text-primary">Weight</th>
-                                    <th class="w-1/1 font-semibold dark:text-primary">Purchase Price</th>
+                                    <th class="w-1/1 font-semibold dark:text-white">No</th>
+                                    <th class="w-48 font-semibold dark:text-white">Conditions</th>
+                                    <th class="w-1/1 font-semibold dark:text-white">Name Food</th>
+                                    <th class="w-1/1 font-semibold dark:text-white">Ingredients</th>
+                                    <th class="w-1/1 font-semibold dark:text-white">Qty</th>
+                                    <th class="w-38 font-semibold dark:text-white">Weight</th>
+                                    <th class="w-1/1 font-semibold dark:text-white">Purchase Price</th>
                                 </tr>
                                 <tr>
-                                    <th class="font-semibold pb-2 dark:text-primary">1</th>
+                                    <th class="font-semibold pb-2 dark:text-white">1</th>
                                     <td class="flex">
                                         <select style=" border:none; background: transparent;">
-                                            <option value="Vineet" class="dark:text-primary">Display</option>
-                                            <option value="Sumit" class="dark:text-primary">W.House</option>
+                                            <option value="Vineet" class="dark:text-white">Display</option>
+                                            <option value="Sumit" class="dark:text-white">W.House</option>
                                         </select>
                                     </td>
-                                    <td><input type="text" class="text-2xl w-full dark:text-primary" style="border: none; background: transparent;" name="name" placeholder="Name"></td>
-                                    <td><input type="text" class="text-2xl dark:text-primary" style="border: none; width:10vw;background: transparent;" name="Bahan" placeholder="Ingredients"> </td>
-                                    <td><input type="text" class="text-2xl w-full dark:text-primary" style="border: none;background: transparent;" name="Qty" placeholder="Quantity"></td>
+                                    <td><input type="text" class="text-2xl w-full dark:text-white" style="border: none; background: transparent;" name="name" placeholder="Name"></td>
+                                    <td><input type="text" class="text-2xl dark:text-white" style="border: none; width:10vw;background: transparent;" name="Bahan" placeholder="Ingredients"> </td>
+                                    <td><input type="text" class="text-2xl w-full dark:text-white" style="border: none;background: transparent;" name="Qty" placeholder="Quantity"></td>
                                     <td class="flex">
-                                        <input type="text" class="text-2xl dark:text-primary" style="border: none; width:10vw;background: transparent;" name="Weight">
+                                        <input type="text" class="text-2xl dark:text-white" style="border: none; width:10vw;background: transparent;" name="Weight">
                                         <select style=" border:none; background: transparent;">
-                                            <option value="Vineet" class="text-2xl dark:text-primary">Gr</option>
-                                            <option value="Select" class="text-2xl dark:text-primary">Kg</option>
-                                            <option value="Vineet" class="text-2xl dark:text-primary">Ons</option>
-                                            <option value="Vineet" class="text-2xl dark:text-primary">Krat</option>
-                                            <option value="Vineet" class="text-2xl dark:text-primary">Ml</option>
-                                            <option value="Vineet" class="text-2xl dark:text-primary">Liter</option>
+                                            <option value="Vineet" class="text-2xl dark:text-white">Gr</option>
+                                            <option value="Select" class="text-2xl dark:text-white">Kg</option>
+                                            <option value="Vineet" class="text-2xl dark:text-white">Ons</option>
+                                            <option value="Vineet" class="text-2xl dark:text-white">Krat</option>
+                                            <option value="Vineet" class="text-2xl dark:text-white">Ml</option>
+                                            <option value="Vineet" class="text-2xl dark:text-white">Liter</option>
                                         </select>
                                     </td>
-                                    <td><input type="text" type="number" id="inputAngka1" class="text-2xl w-full" style="border: none;background: transparent;" name="Prize" placeholder="Raw price"></td>
-                                </tr>
-                                <tr>
-                                    <th> </th>
-                                    <td onselectstart="return false"> </td>
-                                    <td onselectstart="return false"></td>
-                                    <td><input type="text" class="text-2xl dark:text-primary" style="border: none; width:10vw;background: transparent;" name="Bahan" placeholder="Ingredients"> </td>
-                                    <td><input type="text" class="text-2xl w-full dark:text-primary" style="border: none;background: transparent;" name="Qty" placeholder="Quantity"></td>
-                                    <td class="flex">
-                                        <input type="text" class="text-2xl dark:text-primary" style="border: none; width:10vw;background: transparent;" name="Weight">
-                                        <select style=" border:none; background: transparent;">
-                                            <option value="Vineet" class="text-2xl dark:text-primary">Gr</option>
-                                            <option value="Select" class="text-2xl dark:text-primary">Kg</option>
-                                            <option value="Vineet" class="text-2xl dark:text-primary">Ons</option>
-                                            <option value="Vineet" class="text-2xl dark:text-primary">Krat</option>
-                                            <option value="Vineet" class="text-2xl dark:text-primary">Ml</option>
-                                            <option value="Vineet" class="text-2xl dark:text-primary">Liter</option>
-                                        </select>
-                                    </td>
-                                    <td><input type="text" type="number" id="inputAngka2" class="text-2xl w-full dark:text-primary" style="border: none;background: transparent;" name="Prize" placeholder="Raw price"></td>
+                                    <td><input type="number" id="inputAngka1" class="text-2xl w-full" style="border: none;background: transparent;" name="Prize" placeholder="Raw price"></td>
                                 </tr>
                                 <tr>
                                     <th> </th>
                                     <td onselectstart="return false"> </td>
                                     <td onselectstart="return false"></td>
-                                    <td><input type="text" class="text-2xl dark:text-primary" style="border: none; width:10vw;background: transparent;" name="Bahan" placeholder="Ingredients"> </td>
-                                    <td><input type="text" class="text-2xl w-full dark:text-primary" style="border: none; background: transparent;" name="Qty" placeholder="Quantity"></td>
+                                    <td><input type="text" class="text-2xl dark:text-white" style="border: none; width:10vw;background: transparent;" name="Bahan" placeholder="Ingredients"> </td>
+                                    <td><input type="text" class="text-2xl w-full dark:text-white" style="border: none;background: transparent;" name="Qty" placeholder="Quantity"></td>
+                                    <td class="flex">
+                                        <input type="text" class="text-2xl dark:text-white" style="border: none; width:10vw;background: transparent;" name="Weight">
+                                        <select style=" border:none; background: transparent;">
+                                            <option value="Vineet" class="text-2xl dark:text-white">Gr</option>
+                                            <option value="Select" class="text-2xl dark:text-white">Kg</option>
+                                            <option value="Vineet" class="text-2xl dark:text-white">Ons</option>
+                                            <option value="Vineet" class="text-2xl dark:text-white">Krat</option>
+                                            <option value="Vineet" class="text-2xl dark:text-white">Ml</option>
+                                            <option value="Vineet" class="text-2xl dark:text-white">Liter</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="number" id="inputAngka2" class="text-2xl w-full dark:text-white" style="border: none;background: transparent;" name="Prize" placeholder="Raw price"></td>
+                                </tr>
+                                <tr>
+                                    <th> </th>
+                                    <td onselectstart="return false"> </td>
+                                    <td onselectstart="return false"></td>
+                                    <td><input type="text" class="text-2xl dark:text-white" style="border: none; width:10vw;background: transparent;" name="Bahan" placeholder="Ingredients"> </td>
+                                    <td><input type="text" class="text-2xl w-full dark:text-white" style="border: none; background: transparent;" name="Qty" placeholder="Quantity"></td>
                                     <td class="flex">
                                         <input type="text" class="text-2xl" style="border: none; width:10vw;background: transparent;" name="Weight">
                                         <select style=" border:none;background: transparent;">
-                                            <option value="Vineet" class="text-2xl dark:text-primary">Gr</option>
-                                            <option value="Select" class="text-2xl dark:text-primary">Kg</option>
-                                            <option value="Vineet" class="text-2xl dark:text-primary">Ons</option>
-                                            <option value="Vineet" class="text-2xl dark:text-primary">Krat</option>
-                                            <option value="Vineet" class="text-2xl dark:text-primary">Ml</option>
-                                            <option value="Vineet" class="text-2xl dark:text-primary">Liter</option>
+                                            <option value="Vineet" class="text-2xl dark:text-white">Gr</option>
+                                            <option value="Select" class="text-2xl dark:text-white">Kg</option>
+                                            <option value="Vineet" class="text-2xl dark:text-white">Ons</option>
+                                            <option value="Vineet" class="text-2xl dark:text-white">Krat</option>
+                                            <option value="Vineet" class="text-2xl dark:text-white">Ml</option>
+                                            <option value="Vineet" class="text-2xl dark:text-white">Liter</option>
                                         </select>
                                     </td>
-                                    <td><input type="text" type="number" id="inputAngka3" class="text-2xl w-full dark:text-primary" style="border: none;background: transparent;" name="Prize" placeholder="Raw price"></td>
+                                    <td><input type="number" id="inputAngka3" class="text-2xl w-full dark:text-white" style="border: none;background: transparent;" name="Prize" placeholder="Raw price"></td>
                                 </tr>
                                 <tr>
                                     <th> </th>
                                     <td onselectstart="return false"> </td>
                                     <td onselectstart="return false"></td>
-                                    <td><input type="text" class="text-2xl dark:text-primary" style="border: none; width:10vw;background: transparent;" name="Bahan" placeholder="Ingredients"> </td>
-                                    <td><input type="text" class="text-2xl w-full dark:text-primary" style="border: none;background: transparent;" name="Qty" placeholder="Quantity"></td>
+                                    <td><input type="text" class="text-2xl dark:text-white" style="border: none; width:10vw;background: transparent;" name="Bahan" placeholder="Ingredients"> </td>
+                                    <td><input type="text" class="text-2xl w-full dark:text-white" style="border: none;background: transparent;" name="Qty" placeholder="Quantity"></td>
                                     <td class="flex">
-                                        <input type="text" class="text-2xl dark:text-primary" style="border: none; width:10vw;background: transparent;" name="Weight">
+                                        <input type="text" class="text-2xl dark:text-white" style="border: none; width:10vw;background: transparent;" name="Weight">
                                         <select style=" border:none;background: transparent;">
-                                            <option value="Vineet" class="text-2xl dark:text-primary">Gr</option>
-                                            <option value="Select" class="text-2xl dark:text-primary">Kg</option>
-                                            <option value="Vineet" class="text-2xl dark:text-primary">Ons</option>
-                                            <option value="Vineet" class="text-2xl dark:text-primary">Krat</option>
-                                            <option value="Vineet" class="text-2xl dark:text-primary">Ml</option>
-                                            <option value="Vineet" class="text-2xl dark:text-primary">Liter</option>
+                                            <option value="Vineet" class="text-2xl dark:text-white">Gr</option>
+                                            <option value="Select" class="text-2xl dark:text-white">Kg</option>
+                                            <option value="Vineet" class="text-2xl dark:text-white">Ons</option>
+                                            <option value="Vineet" class="text-2xl dark:text-white">Krat</option>
+                                            <option value="Vineet" class="text-2xl dark:text-white">Ml</option>
+                                            <option value="Vineet" class="text-2xl dark:text-white">Liter</option>
                                         </select>
                                     </td>
-                                    <td><input type="text" type="number" id="inputAngka4" class="text-2xl dark:text-primary w-full" style="border: none;background: transparent;" name="Prize" placeholder="Raw price"></td>
+                                    <td><input type="number" id="inputAngka4" class="text-2xl dark:text-white w-full" style="border: none;background: transparent;" name="Prize" placeholder="Raw price"></td>
                                 </tr>
                                 <tr class="bar2">
                                     <td> </td>
                                     <td onselectstart="return false"> </td>
                                     <td onselectstart="return false"> </td>
-                                    <td><input type="text" class="text-2xl dark:text-primary" style="border: none; width:10vw;background: transparent;" name="Bahan" placeholder="Ingredients"> </td>
-                                    <td><input type="text" class="text-2xl dark:text-primary w-full" style="border: none;background: transparent;" name="Qty" placeholder="Quantity"></td>
+                                    <td><input type="text" class="text-2xl dark:text-white" style="border: none; width:10vw;background: transparent;" name="Bahan" placeholder="Ingredients"> </td>
+                                    <td><input type="text" class="text-2xl dark:text-white w-full" style="border: none;background: transparent;" name="Qty" placeholder="Quantity"></td>
                                     <td class="flex">
-                                        <input type="text" class="text-2xl dark:text-primary" style="border: none; width:10vw;background: transparent;" name="Weight">
+                                        <input type="text" class="text-2xl dark:text-white" style="border: none; width:10vw;background: transparent;" name="Weight">
                                         <select style=" border:none;background: transparent;">
-                                            <option value="Vineet" class="text-2xl dark:text-primary">Gr</option>
-                                            <option value="Select" class="text-2xl dark:text-primary">Kg</option>
-                                            <option value="Vineet" class="text-2xl dark:text-primary">Ons</option>
-                                            <option value="Vineet" class="text-2xl dark:text-primary">Krat</option>
-                                            <option value="Vineet" class="text-2xl dark:text-primary">Ml</option>
-                                            <option value="Vineet" class="text-2xl dark:text-primary">Liter</option>
+                                            <option value="Vineet" class="text-2xl dark:text-white">Gr</option>
+                                            <option value="Select" class="text-2xl dark:text-white">Kg</option>
+                                            <option value="Vineet" class="text-2xl dark:text-white">Ons</option>
+                                            <option value="Vineet" class="text-2xl dark:text-white">Krat</option>
+                                            <option value="Vineet" class="text-2xl dark:text-white">Ml</option>
+                                            <option value="Vineet" class="text-2xl dark:text-white">Liter</option>
                                         </select>
                                     </td>
-                                    <td><input type="text" id="nilaiInput" class="text-2xl dark:text-primary w-full" style="border: none; background: transparent;" name="Prize" placeholder="Raw price"></td>
+                                    <td><input type="text" id="nilaiInput" class="text-2xl dark:text-white w-full" style="border: none; background: transparent;" name="Prize" placeholder="Raw price"></td>
                                 </tr>
                                 <tr>
                                     <th colspan="5" onselectstart="return false"> </th>
-                                    <td class="w-30 font-semibold text-end pt-2 dark:text-primary" style="padding-top: 1.8vh;">Services cost</td>
-                                    <td><input type="text" type="number" id="inputAngka5" class="text-2xl dark:text-primary w-full" style="border: none; background: transparent;" name="Prize" placeholder="Other cost"></td>
+                                    <td class="w-30 font-semibold text-end pt-2 dark:text-white" style="padding-top: 1.8vh;">Services cost</td>
+                                    <td><input type="number" id="inputAngka5" class="text-2xl dark:text-white w-full" style="border: none; background: transparent;" name="Prize" placeholder="Other cost"></td>
                                 </tr>
                             </form>
                             <tr>
                                 <td colspan="5"></td>
-                                <td class="w-30 font-semibold text-end pt-2 dark:text-primary" style="padding-top: 1.8vh; background: transparent;">Tax cost</td>
+                                <td class="w-30 font-semibold text-end pt-2 dark:text-white" style="padding-top: 1.8vh; background: transparent;">Tax cost</td>
                                 <td>
-                                    <input type="text" type="number" id="inputAngka6" class="text-2xl dark:text-primary w-full" style="border: none; background: transparent;" name="tax" placeholder="Max 0.08%">
+                                    <input type="number" id="inputAngka6" class="text-2xl dark:text-white w-full" style="border: none; background: transparent;" name="tax" placeholder="Max 0.08%">
                                 </td>
                             </tr>
                         </thead>
                     </table>
+                    <tr>
+                        <td>
+                            <p class="text-2xl font-semibold text-red-700 pt-2 ps-3 dark:text-primary">*Mohon cek kembali HPP</p>
+                        </td>
+                        <td>
+                            <input type="text" class="text-2xl w-full mb-8 dark:text-white border border-gray-300" style="background: transparent;" name="Nt" placeholder="Catatan">
+                        </td>
+                    </tr>
                     <tr>
                         <td colspan="7">
                             <button type="submit" id="btnsubmit" value="Login" onclick="totalMenu()" name="login" class="w-48 h-14 float-right shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] text-white bg-primary focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-2xl dark:text-white">Submit</button>
@@ -449,21 +486,21 @@
                     <div class="mt-20" style="width: 25vw;">
                         <table class="table table-bordered border-solid">
                             <tr>
-                                <th class="dark:text-primary">Total Price</th>
+                                <th class="dark:text-white">Total Price</th>
                                 <td>
-                                    <p id="hargaAsli" class="dark:text-primary"></p>
+                                    <p id="hargaAsli" class="dark:text-white"></p>
                                 </td>
                             </tr>
                             <tr>
-                                <th style="width: 8vw;" class="dark:text-primary">Estimated sell</th>
-                                <td style="width: 15vw;" class="dark:text-primary">
-                                    <div id="hargaTambah" class="dark:text-primarydark:text-primary"></div>
+                                <th style="width: 8vw;" class="dark:text-white">Estimated sell</th>
+                                <td style="width: 15vw;" class="dark:text-white">
+                                    <div id="hargaTambah" class="dark:text-whitedark:text-white"></div>
                                 </td>
                             </tr>
                             <tr>
-                                <th class="dark:text-primary">Net sales</th>
+                                <th class="dark:text-white">Net sales</th>
                                 <td>
-                                    <div id="hargaJual" class="dark:text-primary"></div>
+                                    <div id="hargaJual" class="dark:text-white"></div>
                                 </td>
                             </tr>
                         </table>
@@ -489,6 +526,7 @@
     <script src="dist/asset/js/dark_mode.js"></script>
     <script src=" https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js">
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.6.5/js/dataTables.buttons.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.flash.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>

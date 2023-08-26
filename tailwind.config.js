@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['index.php', '../loginadmin.php', 'landing-page.php', 'additem.php', 'stock.php', './node_modules/flowbite/**/*.js', './src/**/*.{html,js}', './node_modules/tw-elements/dist/js/**/*.js'],
+  content: ['index.php', '../loginadmin.php', 'landing-page.php', 'additem.php', 'stock.php', 'export.php', 'packet.php', './node_modules/flowbite/**/*.js', './src/**/*.{html,js}', './node_modules/tw-elements/dist/js/**/*.js'],
   darkMode: 'class',
   container: {
     center: true,
