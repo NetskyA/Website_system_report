@@ -22,6 +22,7 @@ if (isset($_POST["login"])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sagon Nutrition | Login Admin</title>
+    <link rel="shortcut icon" href="dist/asset/logo/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="dist/output.css" />
     <link rel="stylesheet" href="style/styles.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">

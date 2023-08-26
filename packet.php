@@ -10,7 +10,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sagon Nutrition | Landing Page</title>
+    <title>Sagon Nutrition | Packet</title>
+    <link rel="shortcut icon" href="dist/asset/logo/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="dist/output.css" />
     <link rel="stylesheet" href="style/styles.css" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
