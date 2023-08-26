@@ -574,9 +574,8 @@
                 </div>
             </div>
         </div>
-
     </header>
-    <div class="footer mt-24 absolute w-full">
+    <div class="footer mt-24 w-full">
         <div class="coverfooter h-24 w-full">
             <p class="font-semibold text-3xl text-white float-left mt-8 ms-10">PT. Sagon Nutrition (Sulawesi Selatan)</p>
             <div class="footerleft float-right mt-8">
